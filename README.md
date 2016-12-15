@@ -12,6 +12,6 @@ Return new list removing duplicated elements
 
 Return new list containig elements that only appear once.
 
-## flatten(iterable[, depth][, ftypes])
+### flatten(iterable[, depth][, ftypes])
 
 Flatten to the depth 
