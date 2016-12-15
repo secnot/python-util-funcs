@@ -4,11 +4,14 @@ Some simple functions that I find using time and again
 
 ## Lists
 
-* **unique(iterable[,function])**:
-	Return new list removing duplicated elements
+### unique(iterable[,function])
 
-* **non_repeat(list [, id_function])**:
-	Return new list containig elements that only appear once.
+Return new list removing duplicated elements
 
-* **flatten(iterable[, depth][, ftypes])**:
-	Flatten to the depth 
+### non_repeat(list [, id_function])
+
+Return new list containig elements that only appear once.
+
+## flatten(iterable[, depth][, ftypes])
+
+Flatten to the depth 
