@@ -1,4 +1,4 @@
-from collections import OrderedDict
+from collections import OrderedDict, Iterable
 
 def unique(seq, idfun=None): 
     """
@@ -28,7 +28,7 @@ def unique(seq, idfun=None):
 
 def non_repeat(seq, idfun=None):
     """
-    Returns list containing elements that don't repeat
+    Returns list containing elements that only appear once.
     (stable - preserves relative order)
 
     Arguments:
@@ -49,3 +49,26 @@ def non_repeat(seq, idfun=None):
 
     return [value[1] for key, value in seen.items() if value]
 
+
+
+def _flatten(lst, depth, ftypes=(list, tuple)):
+    for e in lst:
+        if not depth:
+            yield e
+        elif not isinstance(e, ftypes):
+            yield e
+        else:
+            for b in _flatten(e, depth-1, ftypes):
+                yield b
+
+def flatten(lst, depth=1, ftypes=(list, tuple)):
+    """
+    Flatten nested list to the required depth.
+    """
+    assert depth>=0
+    return [e for e in _flatten(lst, depth, ftypes)]
+
+
+
+def flatten_all(lst):
+    return None
